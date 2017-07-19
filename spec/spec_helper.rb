@@ -1,3 +1,6 @@
+require 'database_cleaner'
+require 'rails_helper'
+require 'factory_girl_rails'
 
 DatabaseCleaner.strategy = :truncation
 RSpec.configure do |config|

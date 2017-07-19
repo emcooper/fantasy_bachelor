@@ -1,0 +1,8 @@
+<h1>Team: <%= @user.team_name %></h1>
+
+<h3>Your Players:</h3>
+<% @user.contestants.each do |contestant| %>
+<%= contestant.name %>
+<!-- make link -->
+<%= contestant.total_score %>
+<% end %>

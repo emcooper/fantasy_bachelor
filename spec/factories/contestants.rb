@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :contestant do
-    name "MyString"
-    user nil
+    sequence :name {|n| "Contestant #{n}"}
+    user 
   end
 end

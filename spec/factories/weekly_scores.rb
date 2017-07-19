@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :weekly_score do
-    contestant nil
-    play nil
-    week nil
-    play_count 1
+    contestant
+    play
+    week
+    play_count {rand(1..5)}
   end
 end

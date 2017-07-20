@@ -3,7 +3,9 @@
 <%= form_for @user do |f| %>
   <%= f.label :team_name %>
   <%= f.text_field :team_name %>
-  <%= check_box_tag(:role, :admin, @user.admin?, :name => 'user[role]', id: "admin?") %>
-  <%= "Admin?" %>
-  <%= f.submit %>
+  <% if current_admin? %>
+    <%= check_box_tag(:role, :admin, @user.admin?, :name => 'user[role]', id: "admin?") %>
+    <%= "Admin?" %>
+  <% end %>
+  <%= f.submit "Update Account" %>
 <% end %>

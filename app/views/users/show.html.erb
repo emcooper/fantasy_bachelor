@@ -1,4 +1,5 @@
 <h1>Team: <%= @user.team_name %></h1>
+<%= link_to "Edit", edit_user_path(@user) %>
 <h4><%= "Admin" if @user.admin? %></h4>
 
 <h3>Players:</h3>

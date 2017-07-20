@@ -10,18 +10,17 @@ describe "User visits users index" do
       expect(page).to have_content(user1.team_name)
       expect(page).to have_content(user2.team_name)
       expect(page).to have_content(user3.team_name)
-      # expect(page).to have_content("Edit")
-      # expect(page).to have_content("Delete")
+      # expect(page).to have_content ("Edit")
+      # expect(page).to have_content ("Delete")
     end
   end
   context "as default user" do
     it "should not render users and render 404" do
-      skip
       user = create(:user)
       user1, user2, user3 = create_list(:user, 3)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-      visit_admin_users
+      visit admin_users_path
 
       expect(page).to_not have_content(user1.team_name)
       expect(page).to_not have_content(user2.team_name)

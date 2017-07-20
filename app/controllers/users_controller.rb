@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update]
+  before_action :require_self, only: [:edit, :update]
 
   def new
     @user = User.new
@@ -35,5 +36,9 @@ class UsersController < ApplicationController
 
   def find_user
     @user = User.find(params[:id])
+  end
+
+  def require_self
+    render file: "/public/404" unless current_user == @user || current_admin?
   end
 end

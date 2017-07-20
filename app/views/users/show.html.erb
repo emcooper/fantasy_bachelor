@@ -1,7 +1,7 @@
 <h1>Team <%= @user.team_name %></h1>
 <% if @user == current_user || current_admin? %>
   <%= link_to "Edit", edit_user_path(@user) %>
-  <%= link_to "Delete", user_path(@user), method: :delete %>
+  <%= link_to "Delete Account", user_path(@user), method: :delete %>
 <% end %>
 
 <h4><%= "Admin" if @user.admin? %></h4>

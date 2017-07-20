@@ -31,7 +31,7 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     redirect_to admin_users_path if current_admin?
-    redirect_to new_user_path 
+    redirect_to new_user_path unless current_admin?
   end
 
   private

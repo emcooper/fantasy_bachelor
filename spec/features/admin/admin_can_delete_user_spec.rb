@@ -6,7 +6,7 @@ RSpec.feature "Admin deletes an user" do
 
     visit admin_users_path
     click_on("#{user2.team_name}")
-    click_on("Delete")
+    click_on("Delete Account")
 
     expect(current_path).to eq(admin_users_path)
     expect(page).to have_content(user1.team_name)

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:show]
+  before_action :find_user, only: [:show, :edit, :update]
 
   def new
     @user = User.new
@@ -19,10 +19,18 @@ class UsersController < ApplicationController
   def show
   end
 
+  def edit
+  end
+
+  def update
+    @user.update(user_params)
+    redirect_to @user
+  end
+
   private
 
   def user_params
-    params.require(:user).permit(:team_name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:team_name, :email, :password, :password_confirmation, :role)
   end
 
   def find_user

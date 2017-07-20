@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users, only: [:create, :new, :show, :edit, :update]
   root 'sessions#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

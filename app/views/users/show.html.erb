@@ -1,6 +1,7 @@
 <h1>Team: <%= @user.team_name %></h1>
+<h4><%= "Admin" if @user.admin? %></h4>
 
-<h3>Your Players:</h3>
+<h3>Players:</h3>
 <% @user.contestants.each do |contestant| %>
 <%= contestant.name %>
 <!-- make link -->

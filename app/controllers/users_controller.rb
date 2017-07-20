@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:show, :edit, :update]
-  before_action :require_self, only: [:edit, :update]
+  before_action :find_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_self, only: [:edit, :update, :destroy]
 
   def new
     @user = User.new
@@ -26,6 +26,12 @@ class UsersController < ApplicationController
   def update
     @user.update(user_params)
     redirect_to @user
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to admin_users_path if current_admin?
+    redirect_to new_user_path 
   end
 
   private

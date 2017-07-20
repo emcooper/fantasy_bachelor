@@ -9,7 +9,5 @@ describe "Admin visits users index" do
       expect(page).to have_content(user1.team_name)
       expect(page).to have_content(user2.team_name)
       expect(page).to have_content(user3.team_name)
-      expect(page).to have_content ("Edit")
-      # expect(page).to have_content ("Delete")
     end
   end

@@ -5,4 +5,8 @@ FactoryGirl.define do
     sequence :email {|n| "user#{n}@gmail.com"}
     password_digest "password_digest"
   end
+
+  trait :admin do
+    role 1
+  end
 end

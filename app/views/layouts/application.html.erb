@@ -6,14 +6,25 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
-  </head>
+    <link rel="stylesheet" type = "text/css" href="master.css">
+<link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Chivo|Convergence|Montserrat+Alternates|Quicksand:400,700" rel="stylesheet">
+  <body id="bootstrap-override">
+    <%= render partial: "/layouts/default_user_navbar" %>
 
-  <body>
+
     <%= link_to "Log Out", logout_path, method: :delete %>
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
     <% end %>
-    <%= yield %>
+
+    <div class="container-fluid master">
+  <div class="row">
+    <div class="col-md-12"><%= yield %></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 footer"></div>
+  </div>
+</div>
 
   </body>
 </html>

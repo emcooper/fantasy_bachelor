@@ -1,0 +1,30 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#bootstrap-override {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 900;
+}
+
+h1, h2, h3, h4 { font-weight: 900 !important; }
+
+
+nav {
+  background-color: black;
+  margin-bottom: 50px;
+  font-family: 'Quicksand', sans-serif, 700;
+  font-weight: 200;
+}
+
+.site-logo {
+  font-size: 30px;
+  // font-family: 'Abel', sans-serif;
+  // font-family: 'Yanone Kaffeesatz', sans-serif;
+
+}
+
+
+
+.master {
+  margin-top: 50px;
+}

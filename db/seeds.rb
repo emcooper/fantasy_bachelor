@@ -4,11 +4,11 @@ hayley = User.create(team_name: "Gimme the Rose", email: "hayley@gmail.com", pas
 diana = User.create(team_name: "Here for the Right Reasons", email: "diana@gmail.com", password: "diana1", password_confirmation: "diana1")
 user4 = User.create(team_name: "The Final Rose", email: "other_person@gmail.com", role: "admin", password: "otherperson1", password_confirmation: "otherperson1")
 
-contestants = [Alexis,	Angela,	Astrid,	Briana,	Brittany,	Christen,	Corinne,
-              Danielle L., 	Danielle M., 	Dominique,	Liz,	Elizabeth,	Hailey,
-              Ida Marie,	Jaimi,	Jasmine B., 	Jasmine G., 	Josephine,
-              Kristina,	Lacey,	Lauren,	Michelle,	Olivia,	Rachel,	Raven,
-              Sarah, Susannah,	Taylor,	Vanessa,	Whitney]
+contestants = ["Alexis",	"Angela",	"Astrid",	"Briana",	"Brittany",	"Christen",
+              "Corinne", "Danielle L.", 	"Danielle M.", 	"Dominique",	"Liz",
+              "Elizabeth",	"Hailey", "Ida Marie",	"Jaimi",	"Jasmine B.",
+              "Jasmine G.", 	"Josephine", "Kristina",	"Lacey",	"Lauren",	"Michelle",
+              "Olivia",	"Rachel",	"Raven", "Sarah", "Susannah",	"Taylor",	"Vanessa",	"Whitney"]
 
 weeks = [1/5/17, 1/12/1, 1/19/17, 1/26/17]
 
@@ -22,9 +22,9 @@ plays = {"Rose Ceremony Rose" => 10,
 "Quits the Show" => 10,
 "Attempts to Return to Show After Being Eliminated" => 30,
 "'Steals' Nick away (MUST SAY 'STEAL')" => 10,
-"'fairytale'" => 10,
+"'Fairytale'" => 10,
 "'For the right reasons'" => 10,
-"'Journey'"  10,
+"'Journey'" => 10,
 "'I’m not here to make friends'" => 10,
 "'Luckiest girl in the world'" =>  10,
 "First to tell Bachelor she is falling in love" => 20,

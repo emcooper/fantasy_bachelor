@@ -1,4 +1,4 @@
-<div><h2 class = "team-name">Team <%= @user.team_name %></h2>
+<div class = "page-header"><h2 class = "team-name">Team <%= @user.team_name %></h2>
   <% if @user.admin? && current_admin? %>
 <span class="label label-info" id = "admin">Admin</span>
 <% end %>
@@ -11,15 +11,15 @@
 </div><br>
 <div class="table-responsive">
 
-<h3 class = "text-center">Season Results</h3>
+<h3 class = "text-center">Season Summary</h3>
 
 <table class="table table-bordered ">
   <thead>
     <tr>
       <% 13.times do |i| %>
-      <th class = "text-center"><%= i if i > 0 %></th>
+      <th class = "text-center"><%= ("Episode #" if i == 0) || i %></th>
       <% end %>
-      <th class = "text-center">Total</th>
+      <th class = "text-center">Season</th>
     </tr>
   </thead>
   <tbody>

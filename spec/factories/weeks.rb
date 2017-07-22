@@ -9,4 +9,10 @@ FactoryGirl.define do
       create_list(:weekly_contestant, 6, week: week)
     end
   end
+
+  trait :with_3_plays do
+    after(:create) do |week|
+      create_list(:weekly_play, 3, week: week)
+    end
+  end
 end

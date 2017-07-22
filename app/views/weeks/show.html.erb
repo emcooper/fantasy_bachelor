@@ -1,12 +1,13 @@
-<h1 class = "page-header"><span>Episode <%= @week.week_number %></span><span class = "season-title">Season 22</span></h1>
+<h1 class = "page-header"><span>Episode <%= @week.week_number %></span><span class = "season-title">Nick's Season</span></h1>
 <div class="row">
   <% @week.contestants.each do |contestant| %>
   <div class="col-sm-6 col-md-3">
-    <div class="thumbnail">
+    <div class="thumbnail contestant-<%= contestant.id %>">
       <img src="<%= contestant.headshot %> " alt="contestant headshot">
       <div class="caption text-center">
         <h3><%= contestant.name %> </h3>
         <p>Total Points: <%= contestant.weekly_points(@week) %></p>
+        <p><%= render :partial => "enter_points_modal" %></p>
         <p><a href="#" class="btn btn-primary" role="button">Add Points</a></p>
       </div>
     </div>

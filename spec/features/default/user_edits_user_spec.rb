@@ -5,7 +5,7 @@ RSpec.feature "Default user edits an user" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user2)
 
       visit user_path(user2)
-      click_link("Edit")
+      click_link("Edit Account")
 
       expect(page).to have_content("Edit Your Account")
       expect(page).to_not have_content("email")
@@ -25,7 +25,7 @@ RSpec.feature "Default user edits an user" do
 
       visit user_path(user2)
 
-      expect(page).to_not have_content("Edit")
+      expect(page).to_not have_content("Edit Account")
 
       visit edit_user_path(user2)
       expect(page).to have_content("The page you were looking for doesn't exist.")

@@ -7,9 +7,8 @@ RSpec.feature "User edits an user" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
       visit admin_users_path
-      within (".index-user-#{user2.id}") do
-        click_link("Edit")
-      end
+      click_on "#{user2.team_name}"
+      click_link("Edit Account")
 
       expect(page).to have_content("Edit #{user2.team_name}")
       expect(page).to_not have_content("password")

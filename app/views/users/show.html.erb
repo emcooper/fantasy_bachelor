@@ -1,13 +1,53 @@
-<h1>Team <%= @user.team_name %></h1>
-<% if @user == current_user || current_admin? %>
-  <%= link_to "Edit", edit_user_path(@user) %>
-  <%= link_to "Delete Account", user_path(@user), method: :delete %>
+<div><h1 class = "team-name">Team <%= @user.team_name %></h1>
+  <% if @user.admin? %>
+<span class="label label-info" id = "admin">Admin</span>
 <% end %>
-
-<h4><%= "Admin" if @user.admin? %></h4>
+<% if @user == current_user || current_admin? %>
+<span class="admin-buttons">
+  <%= link_to "Edit Account", edit_user_path(@user), :class =>"btn btn-success" %>
+  <%= link_to "Delete Account", user_path(@user), method: :delete, :class =>"btn btn-danger"%>
+</span>
+<% end %>
+</div>
 
 <h3>Players:</h3>
 <% @user.contestants.each do |contestant| %>
 <%= contestant.name %><br><br>
 <!-- make link -->
 <% end %>
+
+<table class="table table-bordered table-inverse">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@TwBootstrap</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>

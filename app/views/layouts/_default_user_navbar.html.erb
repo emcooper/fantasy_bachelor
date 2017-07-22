@@ -1,5 +1,5 @@
 <!-- Fixed navbar -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-top" id = "navi">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -15,7 +15,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="../navbar/">My Team</a></li>
         <li><a href="../navbar-static-top/">My League</a></li>
-        <li class="active"><a href="./">Log Out<span class="sr-only">(current)</span></a></li>
+        <li><%= link_to "Log Out", logout_path, method: :delete %><span class="sr-only"></span></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>

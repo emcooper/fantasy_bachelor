@@ -4,27 +4,43 @@
 #bootstrap-override {
   font-family: 'Quicksand', sans-serif;
   font-weight: 900;
+  color: #998da0 !important;
 }
 
 h1, h2, h3, h4 { font-weight: 900 !important; }
 
+.team-name {
+   display: inline;
+}
+
+.admin-buttons {
+  float: right;
+}
+
+#admin {
+  font-size: 15px;
+  vertical-align: 50% !important;
+}
 
 nav {
-  background-color: black;
+  background-color: #fe5f55;
   margin-bottom: 50px;
   font-family: 'Quicksand', sans-serif, 700;
   font-weight: 200;
 }
 
+ul.nav li a, .container .navbar-header a.site-logo   {
+    color: #eef5db;
+}
+
+ul.nav li a:hover , .container .navbar-header a.site-logo:hover {
+    color: #333745;
+    background-color: transparent;
+}
+
 .site-logo {
-  font-size: 30px;
+  font-size: 35px;
   // font-family: 'Abel', sans-serif;
   // font-family: 'Yanone Kaffeesatz', sans-serif;
 
-}
-
-
-
-.master {
-  margin-top: 50px;
 }

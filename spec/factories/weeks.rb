@@ -2,7 +2,6 @@ FactoryGirl.define do
   factory :week do
     date "2017-07-18"
     week_number {rand(1..12)}
-    contestants
   end
 
   trait :with_6_contestants do
@@ -10,3 +9,4 @@ FactoryGirl.define do
       create_list(:weekly_contestant, 6, week: week)
     end
   end
+end

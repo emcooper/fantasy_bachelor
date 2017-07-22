@@ -1,0 +1,15 @@
+
+<div class="row">
+  <% @week.contestants.each do |contestant| %>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="<%= contestant.headshot %> " alt="contestant headshot">
+      <div class="caption">
+        <h3><%= contestant.name %> </h3>
+        <p>Total Points: </p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

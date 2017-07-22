@@ -3,6 +3,6 @@ FactoryGirl.define do
     contestant
     play
     week
-    play_count {rand(1..5)}
+    play_count 1
   end
 end

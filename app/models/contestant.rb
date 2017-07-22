@@ -7,9 +7,10 @@ class Contestant < ApplicationRecord
   def weekly_points(week_id)
     weekly_plays = WeeklyScore.where("contestant_id = ? AND week_id = ?", self.id, week_id)
     score = 0
-    weekly_plays.each do |play|
-      score += play.play.point_value * play.play_count
-    end
-    return score
+    weekly_plays.sum("play.point_value * play_count")
+    # weekly_plays.each do |play|
+    #   score += play.play.point_value * play.play_count
+    # end
+    # return score
   end
 end

@@ -9,4 +9,10 @@ class Contestant < ApplicationRecord
     weekly_plays_joins_plays = weekly_plays.joins(:play)
     weekly_plays_joins_plays.sum("play_count * point_value")
   end
+
+  def season_points
+    season_plays = WeeklyScore.where("contestant_id = ?", self.id)
+    season_plays_joins_plays = season_plays.joins(:play)
+    season_plays_joins_plays.sum("play_count * point_value")
+  end
 end

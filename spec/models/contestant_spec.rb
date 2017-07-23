@@ -24,5 +24,12 @@ RSpec.describe Contestant, type: :model do
       expect(cont1.weekly_points(week.id)).to eq(play1.point_value + play2.point_value)
       expect(cont6.weekly_points(week.id)).to eq(0)
     end
+
+    it "season_points returns  total points for the season" do
+      user = create(:user,  :with_1_contestants_with_5_points_each_week)
+      contestant = user.contestants.first
+
+      expect(contestant.season_points).to eq(60)
+    end
   end
 end

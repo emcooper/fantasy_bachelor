@@ -26,9 +26,10 @@
   <% @user.contestants.each do |contestant| %>
     <tr>
       <th scope="row"><%= contestant.name %></th>
-      <% 13.times do  %>
-        <td class = "text-center"> <%= rand(1..100) %></td>
+      <% 12.times do |i| %>
+        <td class = "text-center"> <%= contestant.weekly_points(i+1) %></td>
       <% end %>
+      <td> <%= contestant.season_points %> </td>
     </tr>
   <% end %>
   <tr class = "table-active">

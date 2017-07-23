@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :contestant do
-    sequence :name {|n| "Contestant-#{n}"}
+    sequence :name, ["A", "C", "B"].cycle do |n|
+      "Contestant #{n}"
+    end
     user
   end
 end

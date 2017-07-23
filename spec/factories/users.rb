@@ -10,10 +10,16 @@ FactoryGirl.define do
     role 1
   end
 
+  trait :with_12_weeks do
+    after(:create) do |user|
+      create_list(:week, 12)
+    end
+  end
+
+
   trait :with_1_contestants_with_5_points_each_week do
     after(:create) do |user|
       contestant = create(:contestant, user: user)
-      create_list(:week, 12)
       play = create(:play, point_value: 5)
       Week.all.each do |week|
         week.contestants << contestant
@@ -25,7 +31,6 @@ FactoryGirl.define do
     trait :with_1_contestants_with_10_points_each_week do
       after(:create) do |user|
         contestant = create(:contestant, user: user)
-        create_list(:week, 12)
         play = create(:play, point_value: 5)
         Week.all.each do |week|
           week.contestants << contestant

@@ -26,7 +26,8 @@ RSpec.describe Contestant, type: :model do
     end
 
     it "season_points returns  total points for the season" do
-      user = create(:user,  :with_1_contestants_with_5_points_each_week)
+      user = create(:user,  :with_12_weeks,
+                            :with_1_contestants_with_5_points_each_week)
       contestant = user.contestants.first
 
       expect(contestant.season_points).to eq(60)

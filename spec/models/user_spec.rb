@@ -18,4 +18,14 @@ RSpec.describe User, type: :model do
       expect(user.default?).to be_truthy
     end
   end
+  describe "instance methods" do
+    it ".week_total returns total points for week" do
+      user = create(:user,  :with_12_weeks,
+                            :with_1_contestants_with_5_points_each_week,
+                            :with_1_contestants_with_10_points_each_week)
+
+      expect(user.week_points(Week.first.id)).to eq(15)
+      expect(user.week_points(Week.last.id)).to eq(15)
+    end
+  end
 end

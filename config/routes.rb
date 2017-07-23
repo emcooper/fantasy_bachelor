@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   end
 
   resources :weeks, only: [:show]
+
+  resources :weekly_scores, only: [:create]
 end

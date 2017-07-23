@@ -7,7 +7,7 @@
       <div class="caption text-center">
         <h3><%= contestant.name %> </h3>
         <p>Total Points: <%= contestant.weekly_points(@week) %></p>
-        <p><%= render :partial => "enter_points_modal", locals: {contestant: contestant, week: @week} %></p>
+        <p><%= render :partial => "enter_points_modal", locals: {contestant: contestant, week: @week, weekly_score: @weekly_score} %></p>
       </div>
     </div>
   </div>

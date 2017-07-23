@@ -8,7 +8,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Add Points for <%= contestant.name %></h5>
+        <h2 class="modal-title" id="exampleModalLongTitle">Add Points for <%= contestant.name %></h2>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -16,11 +16,13 @@
       <div class="modal-body">
         <div class="container-fluid">
           <div class="row">
-            <% week.plays.each do |play| %>
-            <div class="col-md-6 play-<%= play.id %> text-left">
-
-              <%= play.description %><br>
-            </div>
+            <%= form_for (weekly_score) do |f|  %>
+              <% week.plays.each do |play| %>
+              <div class="col-md-6 play-<%= play.id %> text-left">
+                <label class = "count-entry"><%= f.text_field :play_count, :size=>"2" %></label>
+                <%= play.description %><br>
+              </div>
+              <% end %>
             <% end %>
           </div>
         </div>

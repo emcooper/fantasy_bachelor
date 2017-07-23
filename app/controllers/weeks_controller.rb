@@ -2,7 +2,7 @@ class WeeksController < ApplicationController
   before_action :find_week, only: [:show]
 
   def show
-
+    @weekly_score = WeeklyScore.new
   end
 
   private

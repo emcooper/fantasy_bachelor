@@ -12,8 +12,10 @@ RSpec.feature "User can enter points" do
     within(".contestant-#{cont.id}") do
       click_on("Add Points")
     end
-    find(".play-#{play2.id}", :visible => false).set(1)
-    find("Submit", :visible => false).click
+    within("#modal-#{cont.id}") do
+      find(".play-#{play2.id}", :visible => false).set(1)
+      find(".save-button", :visible => false).click
+    end
 
     within(".contestant-#{cont.id}") do
       expect(page).to have_content("Total Points: #{play2.point_value}")
@@ -22,9 +24,10 @@ RSpec.feature "User can enter points" do
     within(".contestant-#{cont.id}") do
       click_on("Add Points")
     end
+
     find(".play-#{play2.id}", :visible => false).set(1)
     find(".play-#{play3.id}", :visible => false).set(3)
-    find("Submit", :visible => false).click
+    find("Save Changes", :visible => false).click
 
     expected_points = play2.point_value * 2 + play3.point_value * 3
 

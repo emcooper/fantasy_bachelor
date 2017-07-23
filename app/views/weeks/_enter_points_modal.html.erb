@@ -12,6 +12,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
+        <h5>Enter number of times each action ocurred. Point value per ocurrence listed in ( ).</h5>
       </div>
       <div class="modal-body">
         <div class="container-fluid">
@@ -21,8 +22,8 @@
               <%= f.hidden_field :week_id, :value => week.id, :name => "weekly_score[week_id][]"%>
               <% week.plays.each do |play| %>
               <div class="col-md-6 play-<%= play.id %> text-left">
-                <label class = "count-entry"><%= f.text_field :play_count, :name => "weekly_score[plays][#{play.id}][]", :size=>"2" %></label>
-                <%= play.description %><br>
+                <label><%= f.text_field :play_count, :name => "weekly_score[plays][#{play.id}][]", :size=>"2" %></label>
+                <%= play.description %> (<%= play.point_value %>)<br>
               </div>
               <% end %>
           </div>

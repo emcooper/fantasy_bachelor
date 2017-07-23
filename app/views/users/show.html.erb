@@ -37,6 +37,7 @@
     <% 12.times do |i| %>
       <td class = "text-center"> <%= @user.week_points(i+1) %></td>
     <% end %>
+    <td> <%= @user.season_points %> </td>
   </tr>
   </tbody>
 </table>

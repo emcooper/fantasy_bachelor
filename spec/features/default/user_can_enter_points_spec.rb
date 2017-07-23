@@ -13,10 +13,10 @@ RSpec.feature "User can enter points" do
       click_on("Add Points")
     end
     within("#modal-#{cont.id}") do
-      find(".play-#{play2.id}", :visible => false).set(1)
+      find(".play-#{play2.id}", :visible => false).fill_in :with => "1"
       find(".save-button", :visible => false).click
     end
-
+    save_and_open_page
     within(".contestant-#{cont.id}") do
       expect(page).to have_content("Total Points: #{play2.point_value}")
     end

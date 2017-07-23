@@ -17,19 +17,20 @@
         <div class="container-fluid">
           <div class="row">
             <%= form_for (weekly_score) do |f|  %>
+              <%= f.hidden_field :contestant_id, :value => contestant.id, :name => "weekly_score[contestant_id][]"%>
+              <%= f.hidden_field :week_id, :value => week.id, :name => "weekly_score[week_id][]"%>
               <% week.plays.each do |play| %>
               <div class="col-md-6 play-<%= play.id %> text-left">
-                <label class = "count-entry"><%= f.text_field :play_count, :size=>"2" %></label>
+                <label class = "count-entry"><%= f.text_field :play_count, :name => "weekly_score[plays][#{play.id}][]", :size=>"2" %></label>
                 <%= play.description %><br>
               </div>
               <% end %>
-            <% end %>
           </div>
         </div>
-
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary save-button">Save Changes</button>
+        <%= f.submit "Save Changes", :class => "btn btn-primary save-button" %>
+      <% end %>
       </div>
     </div>
   </div>

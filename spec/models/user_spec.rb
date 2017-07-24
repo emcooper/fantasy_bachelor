@@ -35,11 +35,12 @@ RSpec.describe User, type: :model do
       expect(user.season_points).to eq(180)
     end
     it ".season_progression returns hash of weeks and totals" do
-      skip
       user = create(:user,  :with_3_weeks,
                             :with_1_contestants_with_5_points_each_week)
 
-      expected = {1 => 5, 2 => 10, 3 => 15}
+      expected = {Week.first.week_number => 5,
+                  Week.second.week_number => 10,
+                  Week.last.week_number => 15}
 
       expect(user.season_progression).to eq(expected)
     end

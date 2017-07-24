@@ -10,8 +10,8 @@ contestants = ["Alexis",	"Angela",	"Astrid",	"Briana",	"Brittany",	"Christen",
               "Jasmine G.", 	"Josephine", "Kristina",	"Lacey",	"Lauren",	"Michelle",
               "Olivia",	"Rachel",	"Raven", "Sarah", "Susannah",	"Taylor",	"Vanessa",	"Whitney"]
 
-weeks = ["1/5/17", "1/12/17", "1/19/17", "1/26/17", "2/2/17", "2/9/17",
-        "2/16/17", "2/23/17", "3/2/17", "3/9/17", "3/16/17", "3/23/17"]
+weeks = ["2017/5/1", "2017/5/8", "2017/5/8", "2017/5/15", "2017/5/22", "2017/5/29",
+          "2017/6/5", "2017/6/12", "2017/6/19", "2017/6/26", "2017/7/3", "2017/7/10"]
 
 plays = {"Rose Ceremony Rose" => 10,
 "Group Date Rose" => 20,
@@ -53,12 +53,13 @@ contestants.each_with_index do |contestant, index|
   user4.contestants.create!(name: contestant, headshot: Faker::Avatar.image) if index % 4 == 3
 end
 
-week_counter = 1
-weeks.each do |date|
-  Week.create!(date: date, week_number: week_counter)
-  week_counter += 1
-end
-
 plays.each do |description, points|
   Play.create!(description: description, point_value: points)
+end
+
+week_counter = 1
+weeks.each do |date|
+  week = Week.create!(date: date, week_number: week_counter)
+  week.plays << Play.all
+  week_counter += 1
 end

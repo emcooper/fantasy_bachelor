@@ -23,6 +23,6 @@ class User < ApplicationRecord
   def cumulative_points(week_id)
     week = Week.find(week_id)
     week_and_prior_weeks = Week.where("date <= ?", week.date)
-    week_and_prior_weeks.reduce(0) {|sum, points| sum + self.week_points(week.id)}
+    week_and_prior_weeks.reduce(0) {|sum, w| sum + self.week_points(w.id)}
   end
 end

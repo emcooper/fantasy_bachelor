@@ -1,12 +1,12 @@
-<h1 class = page-header>League Really Good League Name</h1>
+<h1 class = page-header><span>League Really Good League Name</span><span class = "season-title">Nick's Season</span></h1>
 
+<div class="table-responsive">
 <h3 class = "text-center">League Summary</h3>
-
 <table class="table table-bordered ">
   <thead>
     <tr>
       <% 13.times do |i| %>
-      <th class = "text-center"><%= ("Episode #" if i == 0) || i %></th>
+      <th class = "text-center"><%= ("Episode #" if i == 0) || (link_to i, "/weeks/#{i}") %></th>
       <% end %>
       <th class = "text-center">Season</th>
     </tr>
@@ -14,7 +14,7 @@
   <tbody>
   <% @users.each do |user| %>
     <tr>
-      <th scope="row"><%= user.team_name %></th>
+      <th scope="row"><%= link_to user.team_name, user %></th>
       <% 12.times do |i| %>
         <td class = "text-center"> <%= user.week_points(i+1) %></td>
       <% end %>

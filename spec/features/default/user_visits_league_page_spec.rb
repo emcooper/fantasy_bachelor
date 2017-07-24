@@ -11,12 +11,12 @@ RSpec.feature "User visits league page" do
     visit ("/league")
 
     within("tbody tr[1]") do
-      expect(page).to have_content(user1.team_name)
+      expect(page).to have_link(user1.team_name, href: "/users/#{user1.id}")
       expect(page).to have_content("15", count: 12)
       expect(page).to have_content("180", count: 1)
     end
     within("tbody tr[2]") do
-      expect(page).to have_content(user2.team_name)
+      expect(page).to have_link(user2.team_name, href: "/users/#{user2.id}")
       expect(page).to have_content("5", count: 12)
       expect(page).to have_content("60", count: 1)
     end

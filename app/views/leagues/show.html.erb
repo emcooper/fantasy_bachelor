@@ -7,10 +7,9 @@
 <%= line_chart(
     @users.map do |user|
       { :name => user.team_name,
-        :data => Week.count do {|i| }}
+        :data => user.season_progression}
 
-
-
+    end
 )  %>
 
 <!-- table -->

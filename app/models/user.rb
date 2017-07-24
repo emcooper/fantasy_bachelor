@@ -11,4 +11,17 @@ class User < ApplicationRecord
   def season_points
     self.contestants.reduce(0) {|sum, cont| sum + cont.season_points}
   end
+
+  # def season_progression
+  #   result = {}
+  #   Week.all.map do |week|
+  #     result[week.week_number] =
+  #   end
+  # end
+
+  def cumulative_points(week_id)
+    week = Week.find(week_id)
+    week_and_prior_weeks = Week.where("date <= ?", week.date)
+    week_and_prior_weeks.reduce(0) {|sum, points| sum + self.week_points(week.id)}
+  end
 end

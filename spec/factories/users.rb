@@ -16,6 +16,13 @@ FactoryGirl.define do
     end
   end
 
+  trait :with_3_weeks do
+    after(:create) do |user|
+      create(:week, date: 3.weeks.ago)
+      create(:week, date: 2.weeks.ago)
+      create(:week, date: 1.week.ago)
+    end
+  end
 
   trait :with_1_contestants_with_5_points_each_week do
     after(:create) do |user|

@@ -1,20 +1,22 @@
-<h1 class = page-header><span>League Really Good League Name</span><span class = "season-title">Nick's Season</span></h1>
-
+<h1 class = page-header><span>League Really Great League </span><span class = "season-title">Nick's Season</span></h1>
+<br>
 <!-- chart -->
-
-<%= line_chart([{:name => "test", :data => {1 => 10, 2 => 20, 3 => 30}}])  %>
-
+<h3 class = "text-center">League Overview</h3>
 <%= line_chart(
     @users.map do |user|
       { :name => user.team_name,
         :data => user.season_progression}
-
-    end
-)  %>
+    end,
+    colors: ["#fe5f55", "#0fa3b1", "#ff9b42", "#777DA7"],
+    curve: false,
+    legend: "bottom",
+    xtitle: "Weeks",
+    ytitle: "Total Points"
+)  %><br><br><br>
 
 <!-- table -->
 <div class="table-responsive">
-<h3 class = "text-center">League Summary</h3>
+<h3 class = "text-center">Weekly Scoring Breakdown</h3>
 <table class="table table-bordered ">
   <thead>
     <tr>

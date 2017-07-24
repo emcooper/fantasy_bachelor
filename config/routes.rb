@@ -4,12 +4,10 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-
+  get '/league', to: 'leagues#show'
   namespace :admin do
     resources :users, only: [:index]
   end
-
   resources :weeks, only: [:show]
-
   resources :weekly_scores, only: [:create]
 end

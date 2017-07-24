@@ -5,9 +5,10 @@
   font-family: 'Quicksand', sans-serif;
   font-weight: 900;
   color: #998da0 !important;
+  background-color: transparent;
 }
 
-h1, h2, h3, h4 { font-weight: 900 !important; }
+h1, h2, h3, h4 { font-weight: 900; }
 
 .table-active {
   background-color: gray;
@@ -57,4 +58,28 @@ ul.nav li a:hover , .container .navbar-header a.site-logo:hover {
   background-color: #96CDFF;
   border: 5px solid #96CDFF;
   border-radius: 5px;
+}
+
+.full {
+    background: url('http://wallpapercave.com/wp/1QlzHPH.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+.login .row .col-md-12 h1.tagline {
+  size: 80px !important;
+  color: white;
+}
+
+.login {
+  padding-top: 100px;
+  color: white;
+}
+
+#site-name {
+  font-weight: 200;
+  font-size: 60px;
 }

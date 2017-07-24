@@ -1,5 +1,10 @@
 class SessionsController < ApplicationController
+
   def new
+  end
+
+  def root
+    redirect_to login_path
   end
 
   def create

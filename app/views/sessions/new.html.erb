@@ -1,13 +1,17 @@
-<div class="container-fluid">
+
+
+<div class="container-fluid login">
   <div class="row">
     <div class="col-md-12 text-center">
+<h1 class = "tagline" id = "site-name">Not Here to Make Friends</h1>
+<h1 class = "tagline">A Bachelor Fantasy League</h1>
 <br><br>
 <%= form_for(:session, url: login_path) do |f| %>
   <%= f.label :email %>
   <%= f.text_field :email %>
   <%= f.label :password %>
   <%= f.password_field :password %>
-  <%= f.submit 'Log In'%>
+  <%= f.submit 'Log In', :class =>"btn btn-success"%>
 <% end %>
 <br><br>
 <%= link_to "New User? Sign Up Now!", new_user_path %>

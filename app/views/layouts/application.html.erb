@@ -1,5 +1,10 @@
 <!DOCTYPE html>
-<html>
+
+<% if current_page?(login_path) %>
+  <html class="full" lang="en">
+<% else %>
+  <html>
+<% end %>
   <head>
     <title>FantasyBachelor</title>
     <%= csrf_meta_tags %>
@@ -9,7 +14,9 @@
     <link rel="stylesheet" type = "text/css" href="master.css">
 <link href="https://fonts.googleapis.com/css?family=Arbutus+Slab|Chivo|Convergence|Montserrat+Alternates|Quicksand:400,700" rel="stylesheet">
   <body id="bootstrap-override">
-    <%= render partial: "/layouts/default_user_navbar" %>
+    <% unless current_page?(login_path) %>
+      <%= render partial: "/layouts/default_user_navbar" %>
+    <% end %>
 
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, :id => "flash_#{name}" %>

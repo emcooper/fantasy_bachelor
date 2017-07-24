@@ -13,10 +13,10 @@
     <div id="navbar" class="navbar-collapse collapse">
 
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "My Team", user_path(current_user)%></li>
-        <li><%= link_to "My League", league_path%></li>
-        <li><%= link_to "Weekly Results", "/weeks/1" %></li>
-        <li><%= link_to "Log Out", logout_path, method: :delete %><span class="sr-only"></span></li>
+        <li><%= link_to "My Team", user_path(current_user) if current_user%></li>
+        <li><%= link_to "My League", league_path if current_user%></li>
+        <li><%= link_to "Weekly Results", "/weeks/1" if current_user%></li>
+        <li><%= (link_to "Log Out", logout_path, method: :delete) if current_user %><span class="sr-only"></span></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>

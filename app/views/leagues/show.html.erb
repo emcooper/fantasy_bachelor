@@ -1,0 +1,26 @@
+<h1 class = page-header>League Really Good League Name</h1>
+
+<h3 class = "text-center">League Summary</h3>
+
+<table class="table table-bordered ">
+  <thead>
+    <tr>
+      <% 13.times do |i| %>
+      <th class = "text-center"><%= ("Episode #" if i == 0) || i %></th>
+      <% end %>
+      <th class = "text-center">Season</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <th scope="row"><%= user.team_name %></th>
+      <% 12.times do |i| %>
+        <td class = "text-center"> <%= user.week_points(i+1) %></td>
+      <% end %>
+      <td class = "text-center"> <%= user.season_points %> </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</div>
